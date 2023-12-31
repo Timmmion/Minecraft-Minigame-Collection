@@ -1,0 +1,13 @@
+name: minigames
+main: com.timmmion.Main
+version: 1.0
+api-version: 1.15
+commands:
+  minigames:
+    description: Opens the minigame menu
+    aliases:
+      - m
+  itemSkip:
+    description: Skips the current Item in ItemForceRace
+  illegal:
+    description: Skips illegal item
