@@ -57,7 +57,7 @@ public class MinigameMenu implements CommandExecutor, Listener {
                 event.setCancelled(true);
 
                 player.closeInventory();
-                Main.getPlugin(Main.class).forceItemManager.startGame();
+                Main.getPlugin(Main.class).forceItemManager.openMenu(player);
             } else {
                 event.setCancelled(true);
             }

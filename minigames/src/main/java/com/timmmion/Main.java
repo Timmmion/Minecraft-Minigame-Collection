@@ -3,8 +3,8 @@ package com.timmmion;
 import java.util.Objects;
 import java.util.logging.Logger;
 
+import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import com.timmmion.ForceItem.ForceItemManager;
 import com.timmmion.ForceItem.IllegalitemSkip;
 import com.timmmion.ForceItem.Skip;
@@ -15,6 +15,8 @@ public class Main extends JavaPlugin {
   private static final Logger LOGGER = Logger.getLogger("minigames");
   public ForceItemManager forceItemManager = new ForceItemManager();
   public static String PREFIX = ChatColor.YELLOW + "[Catlorant] " + ChatColor.GRAY + "";
+  public static String PRIMARY = ChatColor.DARK_GRAY + "";
+  public static String SECONDARY = ChatColor.GRAY + "";
 
   public void onEnable() {
     LOGGER.info("minigame plugin by Timmmion enabled");
@@ -37,8 +39,9 @@ public class Main extends JavaPlugin {
     LOGGER.info("minigame plugin by Timmmion disabled");
   }
 
-  public void createNewForceItemManager(){
+  public void createNewForceItemManager() {
+    HandlerList.unregisterAll(forceItemManager);
     forceItemManager = new ForceItemManager();
+    getServer().getPluginManager().registerEvents(forceItemManager, this);
   }
-
 }
